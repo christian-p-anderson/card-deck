@@ -1,32 +1,33 @@
 import java.util.Collections;
 import java.util.Stack;
 
-public class DeckOfCards extends Stack<Card> {
-    private Stack<Card> deckOfCards;
+public class DeckOfCards extends Stack<CardModel> {
+    private Stack<CardModel> deckOfCards;
 
     public DeckOfCards() { //when this method is called a new deck of cards is generated and shuffled
         refreshDeck();
         this.deckOfCards = shuffleDeck();
     }
 
-    Stack<Card> shuffleDeck() {
+    Stack<CardModel> shuffleDeck() { //this method shuffles the deck
         Collections.shuffle(deckOfCards);
         return deckOfCards;
     }
 
-    public Stack<Card> getDeck() {
+    public Stack<CardModel> getDeck() {
         return deckOfCards;
     }
 
-    public Card dealCard() {
+    public CardModel dealCard() {
         return deckOfCards.pop();
     }
 
     void refreshDeck() { // this creates the deck of cards
-        Stack<Card> newDeck = new Stack<>();
+        Stack<CardModel> newDeck = new Stack<>();
+
         for (Rank r : Rank.values()) {
             for (Suit s : Suit.values()) {
-                Card temp = new Card(s, r);
+                CardModel temp = new CardModel(s, r);
                 newDeck.push(temp);
             }
         }

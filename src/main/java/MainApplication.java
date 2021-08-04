@@ -2,7 +2,7 @@ public class MainApplication {
     public static void main(String[] args) {
         DeckOfCards deckOfCards = new DeckOfCards();
         int count = 0;
-        for (Card card : deckOfCards.getDeck()) {
+        for (CardModel card : deckOfCards.getDeck()) {
             System.out.println(card);
             count++;
         }

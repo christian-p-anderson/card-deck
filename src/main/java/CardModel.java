@@ -1,11 +1,15 @@
-public class Card {
+/*
+    Created this model for use in card game applications and in DeckOfCards class
+ */
+
+public class CardModel {
     private Suit suit;
     private Rank value;
-    public Card(Suit suit, Rank value) {
+    public CardModel(Suit suit, Rank value) {
         this.suit = suit;
         this.value = value;
     }
-    public Card() {}
+    public CardModel() {}
     public Suit getSuit() {
         return this.suit;
     }
