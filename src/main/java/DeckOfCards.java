@@ -3,20 +3,25 @@ import java.util.Stack;
 
 public class DeckOfCards extends Stack<Card> {
     private Stack<Card> deckOfCards;
-    public DeckOfCards() {
+
+    public DeckOfCards() { //when this method is called a new deck of cards is generated and shuffled
         refreshDeck();
         this.deckOfCards = shuffleDeck();
     }
-    public Stack<Card> getDeck() {
-        return deckOfCards;
-    }
+
     Stack<Card> shuffleDeck() {
         Collections.shuffle(deckOfCards);
         return deckOfCards;
     }
+
+    public Stack<Card> getDeck() {
+        return deckOfCards;
+    }
+
     public Card dealCard() {
         return deckOfCards.pop();
     }
+
     void refreshDeck() { // this creates the deck of cards
         Stack<Card> newDeck = new Stack<>();
         for (Rank r : Rank.values()) {
